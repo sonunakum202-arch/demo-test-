@@ -1,0 +1,210 @@
+export default function HealInIndiaWebsite() {
+  const treatments = [
+    {
+      name: 'Cardiac Surgery',
+      price: '$4,500',
+      saving: 'Save 70%'
+    },
+    {
+      name: 'Knee Replacement',
+      price: '$5,200',
+      saving: 'Save 65%'
+    },
+    {
+      name: 'IVF Treatment',
+      price: '$3,000',
+      saving: 'Save 60%'
+    },
+    {
+      name: 'Cancer Treatment',
+      price: '$6,500',
+      saving: 'Save 75%'
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: 'Michael Johnson',
+      country: 'USA',
+      review:
+        'Excellent treatment and caring doctors. I saved thousands of dollars compared to treatment in my country.'
+    },
+    {
+      name: 'Sarah Ahmed',
+      country: 'UAE',
+      review:
+        'The hospital staff and visa assistance were amazing. Everything was professionally managed.'
+    },
+    {
+      name: 'David Smith',
+      country: 'UK',
+      review:
+        'Modern hospitals, affordable surgery, and quick recovery. Highly recommended.'
+    }
+  ];
+
+  const hospitals = [
+    'Apollo Hospitals',
+    'Fortis Healthcare',
+    'Max Healthcare',
+    'Manipal Hospitals'
+  ];
+
+  return (
+    <div className="bg-white text-gray-800 scroll-smooth">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+          <div>
+            <h1 className="text-3xl font-bold text-blue-700">
+              Heal<span className="text-green-600">InIndia</span>
+            </h1>
+          </div>
+
+          <div className="hidden md:flex gap-6 font-medium">
+            <a href="#home" className="hover:text-blue-600">Home</a>
+            <a href="#treatments" className="hover:text-blue-600">Treatments</a>
+            <a href="#hospitals" className="hover:text-blue-600">Hospitals</a>
+            <a href="#testimonials" className="hover:text-blue-600">Testimonials</a>
+            <a href="#contact" className="hover:text-blue-600">Contact</a>
+          </div>
+
+          <button className="bg-green-600 text-white px-5 py-2 rounded-xl shadow hover:bg-green-700 transition">
+            Book Consultation
+          </button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2000&auto=format&fit=crop')"
+        }}
+      >
+        <div className="absolute inset-0 bg-blue-950/70"></div>
+
+        <div className="relative z-10 max-w-5xl mx-auto text-center px-6 text-white">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+            Affordable World-Class Medical Treatment in India
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-200 mb-8">
+            Save up to 70% on surgeries and treatments with top Indian hospitals.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <button className="bg-green-600 hover:bg-green-700 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl">
+              Book Consultation
+            </button>
+
+            <button className="bg-white text-blue-700 hover:bg-gray-100 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl">
+              Upload Medical Reports
+            </button>
+
+            <button className="bg-blue-600 hover:bg-blue-700 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl">
+              Contact on WhatsApp
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="bg-white p-10 rounded-3xl shadow-lg">
+              <h2 className="text-5xl font-bold text-blue-700 mb-4">10,000+</h2>
+              <p className="text-xl text-gray-600">Patients Served</p>
+            </div>
+
+            <div className="bg-white p-10 rounded-3xl shadow-lg">
+              <h2 className="text-5xl font-bold text-green-600 mb-4">50+</h2>
+              <p className="text-xl text-gray-600">Top Hospitals</p>
+            </div>
+
+            <div className="bg-white p-10 rounded-3xl shadow-lg">
+              <h2 className="text-5xl font-bold text-blue-700 mb-4">20+</h2>
+              <p className="text-xl text-gray-600">Countries Served</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatments */}
+      <section id="treatments" className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-blue-700 mb-4">
+              Popular Treatments in India
+            </h2>
+
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Compare affordable medical procedures with internationally accredited hospitals.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {treatments.map((treatment, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 border border-gray-100 rounded-3xl p-8 shadow-md hover:shadow-2xl transition"
+              >
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                  <span className="text-3xl">🏥</span>
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4 text-blue-700">
+                  {treatment.name}
+                </h3>
+
+                <p className="text-4xl font-bold text-green-600 mb-3">
+                  {treatment.price}
+                </p>
+
+                <p className="text-gray-500 mb-6">{treatment.saving}</p>
+
+                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition">
+                  Compare Hospitals
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hospital Logos */}
+      <section id="hospitals" className="py-20 bg-blue-50">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-5xl font-bold text-blue-700 mb-6">
+            Trusted Hospital Partners
+          </h2>
+
+          <p className="text-xl text-gray-600 mb-14">
+            We work with India’s leading multi-specialty hospitals.
+          </p>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {hospitals.map((hospital, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition"
+              >
+                <div className="text-5xl mb-4">🏨</div>
+                <h3 className="text-2xl font-semibold text-gray-700">
+                  {hospital}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-blue-700 mb-4">
+              Complete Medical Trav
